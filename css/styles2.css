@@ -1,0 +1,28 @@
+h1{
+    text-align: center;
+    color: darkgrey;
+    font-size: 50px;
+ 
+}
+.rot{
+  text-align: center;
+  position: relative;
+  -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 7s; /* Safari 4.0 - 8.0 */
+  animation-name: example;
+  animation-duration: 7s;
+}
+#jmb{
+    background-color: crimson;
+}
+h3{
+    text-align: center;
+    font-size: 50px;
+}
+@-webkit-keyframes example {
+     0%   { left:0px; top:0px;}
+    25%  { left:200px; top:0px;}
+    50%  { left:200px; top:20px;}
+    75%  { left:0px; top:20px;}
+    100% { right:0px; top:0px;}
+}
