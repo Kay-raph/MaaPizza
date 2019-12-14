@@ -1,0 +1,61 @@
+h1{
+    text-align: center;
+    color: darkgrey;
+    font-size: 50px;
+ 
+}
+.rot{
+  text-align: center;
+  position: relative;
+  -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 7s; /* Safari 4.0 - 8.0 */
+  animation-name: example;
+  animation-duration: 7s;
+}
+#jmb{
+    background-color: crimson;
+}
+h3{
+    text-align: center;
+    font-size: 50px;
+}
+@-webkit-keyframes example {
+     0%   { left:0px; top:0px;}
+    25%  { left:200px; top:0px;}
+    50%  { left:200px; top:20px;}
+    75%  { left:0px; top:20px;}
+    100% { right:0px; top:0px;}
+}
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    position: absolute;
+  }
+  
+  /* nothing to see here */
+  
+  body {
+    margin: 2em;
+    border: 0;
+  }
+  
+  h2 {
+    text-align: left;
+  }
+  
+  input[type="checkbox"] {
+    margin: 0 0 1.5em 0;
+  }
+  
+  select {
+    margin: 0 0 0.5em 0.5em;
+  }
+  
+  .textarea {
+    margin: 0 0 1em 0;
+  }
