@@ -1,26 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-        <link href="css/styles2.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js "
-          integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin=" anonymous "></script>
-        <script src="js/script2.js "></script>
-    <title>Maa-pizza</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/styles2.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js "
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin=" anonymous "></script>
+  <script src="js/script2.js "></script>
+  <title>Maa-pizza</title>
 </head>
+
 <body>
-    <div class="container-fluid">
-        <div class="jumbotron" id="jmb">
-        <div class="rot"> <h1>MAA-PIZZA HUT</h1><br></div>
-       <b><h3 style="color: burlywood;"><p>PEOPLE DISSAPPOINT</p></b>
-        <b><p>PIZZA IS ETERNAL</p> </h3></b> 
+  <div class="container-fluid">
+    <h1>ORDER FORM</h1>
+    <div class="jumbotron" id="jmb">
+      <div class="rot">
+        <h1>MAA-PIZZA HUT</h1><br>
+      </div>
+      <b>
+        <h3 style="color: burlywood;">
+          <p>"PEOPLE DISSAPPOINT</p>
+      </b>
+      <b>
+        <p>PIZZA IS ETERNAL"</p>
+        </h3>
+      </b>
+    </div>
+    <h1>ORDER DETAILS</h1>
+    <div class="jumbotron" id="jb">
+
+      <form href="script2.js" onsubmit="return validateForm()" method="post">
+        <div class="conta">
+          <div class="row1">
+            <div class="col-50">
+              <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+              <input type="text" id="fname" name="firstname" placeholder="">
+              <label for="email"><i class="fa fa-envelope"></i> Email</label>
+              <input type="text" id="email" name="email    " placeholder="">
+              <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+              <input type="text" id="adr" name="address   " placeholder="">
+              <label for="city"><i class="fa fa-institution"></i> City</label>
+              <input type="text" id="city" name="city     " placeholder="">
+            </div>
+          </div>
+
         </div>
-       
-    
-</div> 
+    </div>
+    <h1>Type of Crust</h1>
+    <div class="jumbotron" style="background-image: url(" css/pzz.jpg");"> <div style="text-align:center;">
+      <input id="Crispy" name="crust-type" type="radio" value="Crispy">
+      <label for="crispy"><strong>Crispy</strong> (fresh mozzarella and basil with sauce)</label>
+    </div>
+    <div style="text-align:center;">
+      <input id="Stuffed" name="crust-type" type="radio" value="stuffed">
+      <label for="stuffed"><strong>Stuffed</strong> (all the mushrooms you can handle)</label>
+    </div>
+    <div style="text-align:center;">
+      <input id="Glutten-Free" name="crust-type" type="radio" value="sausage">
+      <label for="glutten-free"><strong>Gluten-free</strong> (Italian sausage and peppers)</label>
+    </div><br>
+  </div>
+
+  <h1>Toppings</h1>
+  <div class="jumbotron">
+    <!-- toppings -->
+    <div style="text-align:center;">
+      <input id="topping-cheese" name="cheese" type="checkbox" value="cheese" checked>
+      <label for="topping-cheese"><strong>Cheese</strong></label>
+
+      <label class="visuallyhidden" for="topping-cheese-location">Cheese location</label>
+      <select id="topping-cheese-location" name="cheese-location">
+        <option value="all" selected>All over</option>
+        <option value="left">Left side</option>
+        <option value="right">Right side</option>
+      </select>
+    </div>
+    <div style="text-align:center;">
+      <input id="topping-pepperoni" name="topping" type="checkbox" value="pepperoni">
+      <label for="topping-pepperoni"><strong>Pepperoni</strong></label>
+      <!-- for a cleaner experience, we'd only add the <select> when the checkbox is checked -->
+    </div>
+    <div style="text-align:center;">
+      <input id="topping-beef" name="topping" type="checkbox" value="beef" checked>
+      <label for="topping-beef"><strong>Ground beef</strong></label>
+
+      <label class="visuallyhidden" for="topping-beef-location">Beef location</label>
+      <select id="topping-beef-location" name="beef-location">
+        <option value="all">All over</option>
+        <option value="left" selected>Left side</option>
+        <option value="right">Right side</option>
+      </select>
+    </div>
+    <div style="text-align:center;">
+      <input id="topping-spinach" name="topping" type="checkbox" value="spinach" checked>
+      <label for="topping-spinach"><strong>Fresh spinach</strong></label>
+      <label class="visuallyhidden" for="topping-spinach-location">Spinach location</label>
+      <select id="topping-spinach-location" name="spinach-location">
+        <option value="all">All over</option>
+        <option value="left">Left side</option>
+        <option value="right" selected>Right side</option>
+      </select>
+    </div>
+    <div style="text-align:center;">
+      <input id="topping-peppers" name="topping" type="checkbox" value="peppers">
+      <label for="topping-peppers"><strong>Grilled peppers</strong></label>
+      <!-- for a cleaner experience, we'd only add the <select> when the checkbox is checked -->
+    </div>
+  </div>
+  <h1>Pizza Size</h1>
+  <!-- size -->
+  <div class="jumbotron">
+    <div class="size" style="text-align: center;">
+      <label for="pizza-size"><strong>Size</strong></label>
+      <select id="pizza-size" name="pizza-size">
+        <option value="s">Small</option>
+        <option value="m">Medium</option>
+        <option value="l">Large</option>
+      </select>
+    </div>
+    <div class="quant" style="text-align: center;">
+      <label for="pizza-qty"><strong>Quantity</strong></label>
+      <select id="pizza-qty" name="pizza-qty">
+        <option value="1" selected>1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
+    </div>
+    <button id="visually" style="text-align: right;"> <a href="payment.html">Head to payment</a></button>
+    </form>
+  </div>
+  </div>
+  </div>
 </body>
+
 </html>
