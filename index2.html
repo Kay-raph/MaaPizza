@@ -1,143 +1,177 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html lang="en-US">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-  <link href="css/styles2.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js "
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin=" anonymous "></script>
-  <script src="js/script2.js "></script>
-  <title>Maa-pizza</title>
+	<title>HTML5 Local Storage Project</title>
+	<META charset="UTF-8">
+	<META name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<META NAME='rating' CONTENT='General' />
+	<META NAME='expires' CONTENT='never' />
+	<META NAME='language' CONTENT='English, EN' />
+	<META name="description" content="shopping cart project with HTML5 and JavaScript">
+	<META name="keywords" content="HTML5,CSS,JavaScript, html5 session storage, html5 local storage">
+	<META name="author" content="dcwebmakers.com">
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js "
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin=" anonymous "></script>
+	<script src="/Storage.js"></script>
+	<link rel="stylesheet" href="/css/StorageStyle.css">
 </head>
-
+<style>
+	body,html {font-family: Arial, Helvetica, sans-serif;
+	background-image: url("piz.jpg");}
+	* {box-sizing: border-box;}
+	
+	.input-container {
+	  display: -ms-flexbox; /* IE10 */
+	  display: flex;
+	  width: 100%;
+	  margin-bottom: 15px;
+	}
+	
+	.icon {
+	  padding: 10px;
+	  background: dodgerblue;
+	  color: white;
+	  min-width: 50px;
+	  text-align: center;
+	}
+	
+	.input-field {
+	  width: 100%;
+	  padding: 10px;
+	  outline: none;
+	}
+	
+	.input-field:focus {
+	  border: 2px solid dodgerblue;
+	}
+	
+	/* Set a style for the submit button */
+	.btn {
+	  background-color: dodgerblue;
+	  color: white;
+	  padding: 15px 20px;
+	  border: none;
+	  cursor: pointer;
+	  width: 100%;
+	  opacity: 0.9;
+	}
+	
+	.btn:hover {
+	  opacity: 1;
+	}
+	</style>
 <body>
-  <div class="container-fluid">
-    <h1>ORDER FORM</h1>
-    <div class="jumbotron" id="jmb">
-      <div class="rot">
-        <h1>MAA-PIZZA HUT</h1><br>
-      </div>
-      <b>
-        <h3 style="color: burlywood;">
-          <p>"PEOPLE DISSAPPOINT</p>
-      </b>
-      <b>
-        <p>PIZZA IS ETERNAL"</p>
-        </h3>
-      </b>
-    </div>
-    <h1>ORDER DETAILS</h1>
-    <div class="jumbotron" id="jb">
+	<div class="container-fluid">
+		<div class="imeg"><br><br>
+			<h2 style="text-align: center;"><b>Pizza ordering Form</b></h2>
+			<div class="jumbotron" id="jb" style="background-color: aqua;">
 
-      <form href="script2.js" onsubmit="return validateForm()" method="post">
-        <div class="conta">
-          <div class="row1">
-            <div class="col-50">
-              <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-              <input type="text" id="fname" name="firstname" placeholder="">
-              <label for="email"><i class="fa fa-envelope"></i> Email</label>
-              <input type="text" id="email" name="email    " placeholder="">
-              <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-              <input type="text" id="adr" name="address   " placeholder="">
-              <label for="city"><i class="fa fa-institution"></i> City</label>
-              <input type="text" id="city" name="city     " placeholder="">
-            </div>
-          </div>
+				<form action="script2.js" onsubmit="return validateForm()" method="post">
+					<div class="conta">
+						<!-- <div class="row1">
+							<div class="col-50">
+								<label for="fname"><i class="fa fa-user"></i> Full Name</label>
+								<input type="text" id="fname" name="firstname" placeholder="">
+								<label for="email"><i class="fa fa-envelope"></i> Email</label>
+								<input type="text" id="email" name="email    " placeholder="">
+								<label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+								<input type="text" id="adr" name="address   " placeholder="">
+								<label for="city"><i class="fa fa-institution"></i> City</label>
+								<input type="text" id="city" name="city     " placeholder="">
+							</div>
+						</div> -->
+						
+							<h2>Register Form</h2>
+							<div class="input-container">
+								<i class="fa fa-user icon"></i>
+								<input class="input-field" type="text" placeholder="Username" name="usrnm">
+							</div>
 
-        </div>
-    </div>
-    <h1>Type of Crust</h1>
-    <div class="jumbotron" style="background-image: url(" css/pzz.jpg");"> <div style="text-align:center;">
-      <input id="Crispy" name="crust-type" type="radio" value="Crispy">
-      <label for="crispy"><strong>Crispy</strong> (fresh mozzarella and basil with sauce)</label>
-    </div>
-    <div style="text-align:center;">
-      <input id="Stuffed" name="crust-type" type="radio" value="stuffed">
-      <label for="stuffed"><strong>Stuffed</strong> (all the mushrooms you can handle)</label>
-    </div>
-    <div style="text-align:center;">
-      <input id="Glutten-Free" name="crust-type" type="radio" value="sausage">
-      <label for="glutten-free"><strong>Gluten-free</strong> (Italian sausage and peppers)</label>
-    </div><br>
-  </div>
+							<div class="input-container">
+								<i class="fa fa-envelope icon"></i>
+								<input class="input-field" type="text" placeholder="Email" name="email">
+							</div>
+			</div>
+			<p>
+				<h2 style="text-align: center;"><b>Choose Pizza size and Crust </b>
+			</p>
+			</h2>
+			
 
-  <h1>Toppings</h1>
-  <div class="jumbotron">
-    <!-- toppings -->
-    <div style="text-align:center;">
-      <input id="topping-cheese" name="cheese" type="checkbox" value="cheese" checked>
-      <label for="topping-cheese"><strong>Cheese</strong></label>
+				<div id="main">
 
-      <label class="visuallyhidden" for="topping-cheese-location">Cheese location</label>
-      <select id="topping-cheese-location" name="cheese-location">
-        <option value="all" selected>All over</option>
-        <option value="left">Left side</option>
-        <option value="right">Right side</option>
-      </select>
-    </div>
-    <div style="text-align:center;">
-      <input id="topping-pepperoni" name="topping" type="checkbox" value="pepperoni">
-      <label for="topping-pepperoni"><strong>Pepperoni</strong></label>
-      <!-- for a cleaner experience, we'd only add the <select> when the checkbox is checked -->
-    </div>
-    <div style="text-align:center;">
-      <input id="topping-beef" name="topping" type="checkbox" value="beef" checked>
-      <label for="topping-beef"><strong>Ground beef</strong></label>
+					<div class="jumbotron" style="background-color:burlywood;">
+						<div class="size" style="text-align: center;">
+							<label for="pizza-size"><strong>Size</strong></label>
+							<select id="pricey" name="pizza-size">
+								<option style="background-color: DodgerBlue;"value="s">Small Crispy</option>
+								<option style="background-color: DodgerBlue;" value="s">Small Stuffed</option>
+								<option style="background-color: DodgerBlue;" value="s">Small Gluten-free</option>
+								<option style="background-color: DodgerBlue;" value="m">Medium Crispy</option>
+								<option style="background-color: DodgerBlue;" value="m">Medium Stuffed</option>
+								<option style="background-color: DodgerBlue;" value="m">Medium Gluten-free</option>
+								<option style="background-color: DodgerBlue;" value="l">Large Crispy</option>
+								<option style="background-color: DodgerBlue;" value="l">Large Stuffed</option>
+								<option style="background-color: DodgerBlue;" value="l">Large Gluten-free</option>
+							</select>
+						</div>
+						<div class="quant" style="text-align: center;">
+							<label for="pizza-qty"><strong>Pizza Quantity</strong></label>
+							<select id="qty" name="pizza-qty">
+								<option style="background-color: DodgerBlue;" value="1" selected>1</option>
+								<option style="background-color: DodgerBlue;" value="2">2</option>
+								<option style="background-color: DodgerBlue;" value="3">3</option>
+								<option style="background-color: DodgerBlue;" value="4">4</option>
+								<option style="background-color: DodgerBlue;" value="5">5</option>
+								<option style="background-color: DodgerBlue;" value="6">6</option>
+							</select>
+						</div>
+					</div>
+					<h2 style="text-align: center;" id="tops"><b>Toppings</b></h2>
+					<div class="jumbotron" style="background-color: cornflowerblue;">
+						<div class="topi">						<p><input id="topping-cheese" name="cheese" type="checkbox" value="cheese">
+							<label for="topping-cheese" style="color: darkorange;"><strong>Cheese</strong></label></p>
+						<p><input id="topping-onions" name="Onions" type="checkbox" value="Onions">
+							<label for="topping-onions" style="color: darkorange;"><strong>Onions</strong></label></p>
+						<p><input id="topping-pepperoni" name="Pepperoni" type="checkbox" value="Pepperoni">
+							<label for="topping-pepperoni" style="color: darkorange;"><strong>Pepperoni</strong></label>
+						</p>
+						<p><input id="topping-gbeef" name="Ground Beef" type="checkbox" value="Ground Beef">
+							<label for="topping-gbeef" style="color: darkorange;"><strong>Ground Beef</strong></label>
+						</p>
+						<p><input id="topping-gpeppers" name="Grilled Peppers" type="checkbox" value="Grilled Peppers">
+							<label for="topping-gpeppers" style="color: darkorange;"><strong>Grilled
+									Peppers</strong></label></p><br></div>
 
-      <label class="visuallyhidden" for="topping-beef-location">Beef location</label>
-      <select id="topping-beef-location" name="beef-location">
-        <option value="all">All over</option>
-        <option value="left" selected>Left side</option>
-        <option value="right">Right side</option>
-      </select>
-    </div>
-    <div style="text-align:center;">
-      <input id="topping-spinach" name="topping" type="checkbox" value="spinach" checked>
-      <label for="topping-spinach"><strong>Fresh spinach</strong></label>
-      <label class="visuallyhidden" for="topping-spinach-location">Spinach location</label>
-      <select id="topping-spinach-location" name="spinach-location">
-        <option value="all">All over</option>
-        <option value="left">Left side</option>
-        <option value="right" selected>Right side</option>
-      </select>
-    </div>
-    <div style="text-align:center;">
-      <input id="topping-peppers" name="topping" type="checkbox" value="peppers">
-      <label for="topping-peppers"><strong>Grilled peppers</strong></label>
-      <!-- for a cleaner experience, we'd only add the <select> when the checkbox is checked -->
-    </div>
-  </div>
-  <h1>Pizza Size</h1>
-  <!-- size -->
-  <div class="jumbotron">
-    <div class="size" style="text-align: center;">
-      <label for="pizza-size"><strong>Size</strong></label>
-      <select id="pizza-size" name="pizza-size">
-        <option value="s">Small</option>
-        <option value="m">Medium</option>
-        <option value="l">Large</option>
-      </select>
-    </div>
-    <div class="quant" style="text-align: center;">
-      <label for="pizza-qty"><strong>Quantity</strong></label>
-      <select id="pizza-qty" name="pizza-qty">
-        <option value="1" selected>1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-      </select>
-    </div>
-    <button id="visually" style="text-align: right;"> <a href="payment.html">Head to payment</a></button>
-    </form>
-  </div>
-  </div>
-  </div>
+						<h2>subtotal</h2><br>
+						 <div class="bt">
+							<input type=button id="newor" value="Check OUt" onclick="getName()" onsubmit="event.preventDefault()">
+						</div> 
+						
+
+					<!-- 					
+		<input type=button value="Save"   onclick="SaveItem()"> 
+		<input type=button value="Update" onclick="ModifyItem()"> 
+		<input type=button value="Delete" onclick="RemoveItem()">
+	 -->
+
+					<!-- <div id="items_table">
+		<h3>Shopping List</h3>
+		<table id=list></table>
+		<p>
+			<label><input type=button value="Clear" onclick="ClearAll()">
+				<i>* Delete all items</i></label>
+		</p>
+	</div> -->
+			</form>
+
+		</div>
+	</div>
+</div>
 </body>
+
 
 </html>
